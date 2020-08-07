@@ -48,7 +48,7 @@ def box_edges(box_lx, box_ly, box_lz):
 # color of the particle with higher velocity
 
 def collision():
-    global vel, xyz, num_particles
+    global xyz
     num_vertices = vertices.shape[0]
     sec = np.int(num_vertices / num_particles)
 
@@ -88,7 +88,7 @@ def collision():
 # We define position, velocity, color and radius randomly for 50 particles
 # inside the box.
 
-global xyz, dt, steps, num_particles, vel, vertices
+global xyz
 num_particles = 50
 box_lx = 20
 box_ly = 20
@@ -141,7 +141,7 @@ initial_vertices = vertices.copy() - \
 
 
 def timer_callback(_obj, _event):
-    global xyz, dt, steps, num_particles, vcolors, vel
+    global xyz
     cnt = next(counter)
     tb.message = "Let's count up to 1000 and exit :" + str(cnt)
     xyz = xyz + vel * dt
